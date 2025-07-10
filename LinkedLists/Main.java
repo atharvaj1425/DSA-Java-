@@ -96,6 +96,8 @@ public class Main {
         head.next = new Node(arr[1]);
         head.next.next = new Node(arr[2]);
         head.next.next.next = new Node(arr[3]);
+        // Insert a new node with value 1 at the head of the linked list
+        head = insertHead(head, 1);
         // Delete the tail of the linked list
         head = deleteTail(head);
         // Print the modified linked list
