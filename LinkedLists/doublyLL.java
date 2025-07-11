@@ -71,6 +71,40 @@ public class doublyLL {
         return head;
     }
 
+    // Function to delete the tail of the doubly linked list
+    private static Node deleteTail(Node head) {
+        if (head == null || head.next == null) {
+            return null; // Return null if the list is empty or contains only one element
+        }
+        
+        Node tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        
+        Node newtail = tail.prev;
+        
+        newtail.next = null;
+        tail.prev = null;
+        
+        return head;
+    }
+
+    // Function to delete the head of the doubly linked list
+    private static Node deleteHead(Node head) {
+        if (head == null || head.next == null) {
+            return null; // Return null if the list is empty or contains only one element
+        }
+        
+        Node prev = head;
+        head = head.next;
+
+        head.prev = null; // Set 'prev' pointer of the new head to null
+        prev.next = null; // Set 'next' pointer of 'prev' to null
+        
+        return head;
+    }
+
     public static void main(String[] args) {
         int[] arr = {12, 5, 6, 8, 4};
         // Convert the array to a doubly linked list
@@ -85,5 +119,12 @@ public class doublyLL {
         head = insertAtTail(head, 10); // Insert a node with value 10 at the end
         print(head);
 
+        System.out.println("Doubly Linked List after deleting tail node: ");
+        head = deleteTail(head);
+        print(head);
+
+        System.out.println("Doubly Linked List after deleting head node: ");
+        head = deleteHead(head);
+        print(head);
     }
 }
