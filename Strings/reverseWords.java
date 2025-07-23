@@ -1,5 +1,6 @@
-class Solution {
-    public String reverseWords(String s) {
+import java.util.Stack;
+class reverseWords {
+    public String reverseWordsStack(String s) {
         s = s.trim() + " ";  // trim to avoid leading/trailing issues, add sentinel space
         Stack<String> st = new Stack<>();
         String str = "";
@@ -24,11 +25,8 @@ class Solution {
         
         return ans.toString();
     }
-}
 
-
-class Solution {
-    public String reverseWords(String s) {
+    public String reverseWordsEasy(String s) {
         String[] words = s.trim().split("\\s+");
         StringBuilder result = new StringBuilder();
         for(int i = words.length -1;i>=0;i--){
@@ -38,3 +36,4 @@ class Solution {
         return result.toString();
     }
 }
+
