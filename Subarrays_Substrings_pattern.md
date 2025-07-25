@@ -2,24 +2,71 @@
 
 This is a quick reference guide for identifying the correct approach for various subarray and substring problems. Problems are categorized by goal (e.g., max length, count of subarrays) and solution strategy (sliding window, prefix sum + hashmap, etc.).
 
-| Problem Type                   | Problem                                        | Input Types                        | Goal                                | Approach                           | Notes                             |
-| ------------------------------ | ---------------------------------------------- | ---------------------------------- | ----------------------------------- | ---------------------------------- | --------------------------------- |
-| **1. Max/Min Length Subarray** | Maximum Consecutive Ones                       | Binary array                       | Max length of contiguous 1s         | Sliding Window                     | Count 1s, track max stretch       |
-|                                | Maximum Consecutive Ones 2                     | Binary array, flip at most one 0   | Max length of 1s                    | Sliding Window with at most 1 zero | Maintain zero count               |
-|                                | Max Consecutive Ones III                       | Binary array, at most k 0s flipped | Max length of 1s                    | Sliding Window, shrink on >k zeros | Generalized version of above      |
-|                                | Longest Substring Without Repeating Characters | String                             | Longest substring with unique chars | Sliding Window + HashMap           | Map stores last seen index        |
-|                                | Longest Repeating Character Replacement        | String and k                       | Max substring with ≤k replacements  | Sliding Window + maxFreq tracking  | Maintain max char count in window |
-
-| **2. Max/Min Length Subarray With Given Sum** | Longest Subarray with Sum = K (positive nums) | Positive integers | Max length with sum = K | Sliding Window | Expand/shrink with running sum |
-|  | Longest Subarray with Sum = K (positives + negatives) | Any integers | Max length with sum = K | Prefix Sum + HashMap | Map stores first index for each sum |
-|  | Kadane's Algorithm | Any integers | Max sum subarray | Dynamic Programming / Sliding Window | Local max and global max |
-|  | Print subarray with max sum | Any integers | Print indices of subarray with max sum | Kadane's variation | Track start/end indices |
-
-| **3. Total Count of Valid Subarrays** | Binary Subarray With Sum | Binary array, target sum | Count subarrays with sum = target | Prefix Sum + HashMap | HashMap stores sum frequencies |
-|  | Count Number of Nice Subarrays | Integer array | Count subarrays with exactly k odd numbers | atMost(k) - atMost(k-1) trick | Sliding Window Count |
-|  | Number of Substrings Containing All 3 Characters | String of a,b,c | Count substrings containing at least 1 a, b, c | Sliding Window | Maintain last seen positions |
+# 🧪 Subarray & Substring Patterns Cheat Sheet
 
 ---
+
+## 🧱 1. Max/Min Length Subarray or Substring
+
+| Problem                                     | Input Types                          | Goal                                 | Approach                            | Notes                                  |
+|--------------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------|----------------------------------------|
+| Maximum Consecutive Ones                   | Binary array                         | Max length of contiguous 1s          | Sliding Window                      | Count 1s, track max stretch            |
+| Maximum Consecutive Ones II                | Binary array, flip at most one 0     | Max length of 1s                     | Sliding Window with at most 1 zero  | Maintain zero count                    |
+| Max Consecutive Ones III                   | Binary array, flip at most k 0s      | Max length of 1s                     | Sliding Window, shrink if >k zeros  | Generalized version of above           |
+| Longest Substring Without Repeating Chars  | String                               | Longest substring with unique chars  | Sliding Window + HashMap            | Map stores last seen index             |
+| Longest Repeating Character Replacement    | String and k                         | Max substring with ≤k replacements   | Sliding Window + maxFreq tracking   | Maintain max char count in window      |
+
+---
+
+## 🎯 2. Max/Min Length Subarray With Given Sum
+
+| Problem                                     | Input Types                          | Goal                                 | Approach                            | Notes                                  |
+|--------------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------|----------------------------------------|
+| Longest Subarray with Sum = K (positive)   | Positive integers                    | Max length with sum = K              | Sliding Window                      | Expand/shrink with running sum         |
+| Longest Subarray with Sum = K (with neg)   | Any integers                         | Max length with sum = K              | Prefix Sum + HashMap                | Map stores first index for each sum    |
+| Kadane's Algorithm                         | Any integers                         | Max sum of subarray                  | Sliding Window / Dynamic Programming| Local max and global max               |
+| Print Subarray with Max Sum                | Any integers                         | Print indices of subarray with max sum| Kadane’s variation                 | Track start/end indices                |
+
+---
+
+## 🔢 3. Total Count of Valid Subarrays or Substrings
+
+| Problem                                     | Input Types                          | Goal                                 | Approach                            | Notes                                  |
+|--------------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------|----------------------------------------|
+| Binary Subarray With Sum                   | Binary array, target sum             | Count subarrays with sum = target    | Prefix Sum + HashMap                | HashMap stores sum frequencies         |
+| Count Number of Nice Subarrays             | Integer array                        | Count subarrays with exactly k odd   | atMost(k) - atMost(k-1)             | Sliding Window Count                   |
+| Number of Substrings Containing a, b, c    | String of a, b, c                    | Count substrings with all 3 chars    | Sliding Window                      | Maintain last seen positions           |
+
+---
+
+## 📘 Summary
+
+| Situation                          | Recommended Strategy            | Reason                                      |
+|-----------------------------------|----------------------------------|---------------------------------------------|
+| All elements are positive         | Sliding Window                   | Can safely expand/shrink                    |
+| Elements may be negative          | Prefix Sum + HashMap             | Sliding window fails on negatives           |
+| Max/Min valid window length       | Sliding Window                   | Efficient length tracking                   |
+| Total count of valid subarrays    | Prefix Sum or atMost Trick       | Frequency-based counting                    |
+| Unique characters or replacements | Sliding Window + Freq Map/Array  | Character-level state needed                |
+
+---
+
+## 💡 Extra Problems to Explore
+
+| Problem                              | Hint/Technique                         |
+|--------------------------------------|----------------------------------------|
+| Subarrays with Product < K           | Sliding Window with multiplication     |
+| Count Subarrays with Bounded Max     | Sliding Window with conditions         |
+| Minimum Window Substring             | Two Pointers + HashMap (Hard)          |
+| Max Sum Subarray of Size K           | Fixed Size Sliding Window              |
+
+---
+
+> ✅ **Pro Tips:**
+> - Use `atMost(k) - atMost(k-1)` when counting subarrays with **exact** properties.
+> - Use a **HashMap** when dealing with **prefix sums**, especially with **negatives**.
+> - Use **frequency arrays** or **hashmaps** for character-based string problems.
+
 
 ### Utility Functions/Patterns
 
