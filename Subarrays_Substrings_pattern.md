@@ -10,14 +10,14 @@ This is a quick reference guide for identifying the correct approach for various
 |                                | Longest Substring Without Repeating Characters | String                             | Longest substring with unique chars | Sliding Window + HashMap           | Map stores last seen index        |
 |                                | Longest Repeating Character Replacement        | String and k                       | Max substring with ≤k replacements  | Sliding Window + maxFreq tracking  | Maintain max char count in window |
 
-\| **2. Max/Min Length Subarray With Given Sum** | Longest Subarray with Sum = K (positive nums) | Positive integers | Max length with sum = K | Sliding Window | Expand/shrink with running sum |
-\|  | Longest Subarray with Sum = K (positives + negatives) | Any integers | Max length with sum = K | Prefix Sum + HashMap | Map stores first index for each sum |
-\|  | Kadane's Algorithm | Any integers | Max sum subarray | Dynamic Programming / Sliding Window | Local max and global max |
-\|  | Print subarray with max sum | Any integers | Print indices of subarray with max sum | Kadane's variation | Track start/end indices |
+| **2. Max/Min Length Subarray With Given Sum** | Longest Subarray with Sum = K (positive nums) | Positive integers | Max length with sum = K | Sliding Window | Expand/shrink with running sum |
+|  | Longest Subarray with Sum = K (positives + negatives) | Any integers | Max length with sum = K | Prefix Sum + HashMap | Map stores first index for each sum |
+|  | Kadane's Algorithm | Any integers | Max sum subarray | Dynamic Programming / Sliding Window | Local max and global max |
+|  | Print subarray with max sum | Any integers | Print indices of subarray with max sum | Kadane's variation | Track start/end indices |
 
-\| **3. Total Count of Valid Subarrays** | Binary Subarray With Sum | Binary array, target sum | Count subarrays with sum = target | Prefix Sum + HashMap | HashMap stores sum frequencies |
-\|  | Count Number of Nice Subarrays | Integer array | Count subarrays with exactly k odd numbers | atMost(k) - atMost(k-1) trick | Sliding Window Count |
-\|  | Number of Substrings Containing All 3 Characters | String of a,b,c | Count substrings containing at least 1 a, b, c | Sliding Window | Maintain last seen positions |
+| **3. Total Count of Valid Subarrays** | Binary Subarray With Sum | Binary array, target sum | Count subarrays with sum = target | Prefix Sum + HashMap | HashMap stores sum frequencies |
+|  | Count Number of Nice Subarrays | Integer array | Count subarrays with exactly k odd numbers | atMost(k) - atMost(k-1) trick | Sliding Window Count |
+|  | Number of Substrings Containing All 3 Characters | String of a,b,c | Count substrings containing at least 1 a, b, c | Sliding Window | Maintain last seen positions |
 
 ---
 
