@@ -33,7 +33,7 @@ This is a quick reference guide for identifying the correct approach for various
 
 | Problem                                     | Input Types                          | Goal                                 | Approach                            | Notes                                  |
 |--------------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------|----------------------------------------|
-| Binary Subarray With Sum                   | Binary array, target sum             | Count subarrays with sum = target    | Prefix Sum + HashMap                | HashMap stores sum frequencies         |
+| Binary Subarray With Sum                   | Binary array, target sum             | Count subarrays with sum = target    | Prefix Sum + HashMap   or atMost(k) - atMost(k-1)              | HashMap stores sum frequencies         |
 | Count Number of Nice Subarrays             | Integer array                        | Count subarrays with exactly k odd   | atMost(k) - atMost(k-1)             | Sliding Window Count                   |
 | Number of Substrings Containing a, b, c    | String of a, b, c                    | Count substrings with all 3 chars    | Sliding Window                      | Maintain last seen positions           |
 
