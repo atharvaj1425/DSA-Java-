@@ -6,6 +6,7 @@
 
 - 🔹 [Striver A2Z DSA Sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
 - 🔹 [Arsh Goyal DSA Sheet](https://www.proelevate.in/dsa-practice/arsh-dsa-sheet)
+- 🔹 [Shraddha DSA Sheet](https://docs.google.com/spreadsheets/d/1mvlc8EYc3OVVU3X7NKoC0iZJr_45BL_pVxiJec0r94c/edit?pli=1&gid=0#gid=0)
 - 🔹 [Company-wise DSA Sheets](https://www.talentd.in/dsa-corner/companies) *(Practice company-wise regularly!)*
 - 🔹 [Neetcode Patterns & Roadmap](https://neetcode.io/)
 - 🔹 [roadmap.sh DSA Path](https://roadmap.sh/)
